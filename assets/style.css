@@ -1,0 +1,101 @@
+body{
+    background-color: #009688;
+    font-family: sans-serif;   
+    margin: 0;
+    padding: 20px
+}
+*{
+    box-sizing: border-box;
+}
+
+.quiz-container{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: auto;
+    max-height: 500px;
+    max-width: 700px;
+    padding: 30px;
+}
+.question-number,
+.question,
+.options,
+.button,
+.answer-tracker{
+
+}
+.question-number h3{
+    border-bottom: 1px solid #ccc;
+    color: #009688;
+    margin: 0;
+    padding-bottom: 10px;
+}
+.question{
+    color: #000000;
+    font-size: 22px;
+    padding: 15px 0;
+}
+.options div{
+    background-color: #cccccc;
+    font-size: 16px;
+    color: 000000;
+    margin-bottom: 10px;
+    padding:15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.options div.correct{
+    color: #fff;
+    z-index: 1;
+}
+.options div.correct::before{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    z-index: -1;
+    animation: animateBackground 1s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes animateBackground{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+
+
+.options div.incorrect{
+    color: #fff;
+    z-index: 1;
+}
+.options div.incorrect::before{
+    content: "";
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+    animation: animateBackground 1s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes animateBackground{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+.button .btn{
+    padding:10px 30px;
+}
