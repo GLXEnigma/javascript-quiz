@@ -1,9 +1,15 @@
-const questionNumberSpan=document.querySelector("question-num-value")
+
+const questionNumberSpan=document.querySelector(".question-num-value")
+const totalQuestionSpan=document.querySelector(".total-questions");
 const question=document.querySelector(".question");
-const op1=document.querySelector("option1");
-const op2=document.querySelector("option2");
-const op3=document.querySelector("option3");
-const op4=document.querySelector("option4");
+const op1=document.querySelector(".option1");
+const op2=document.querySelector(".option2");
+const op3=document.querySelector(".option3");
+const op4=document.querySelector(".option4");
+let questionIndex
+let index=0;
+
+
 
 //questions
 const questions=[
@@ -33,5 +39,25 @@ const questions=[
     answer:3
     },
 ]
+totalQuestionSpan.innerHTML=questions.length;
+function load(){
+    questionNumberSpan.innerHTML=index+1;
+    question.innerHTML=questions[questionIndex].q;
+    op1.innerHTML=questions[questionIndex].options[0];
+    op2.innerHTML=questions[questionIndex].options[1];
+    op3.innerHTML=questions[questionIndex].options[2];
+    op4.innerHTML=questions[questionIndex].options[3];
+    index++;
+}
 
-set questions and options and question number
+function randomQuestion(){
+    let randomNumber=Math.floor(Math.random()*questions.length);
+    questionIndex=randomNumber;
+    console.log(questionIndex)
+    load();
+}
+
+
+window.onload=function(){
+    this.randomQuestion();
+}
