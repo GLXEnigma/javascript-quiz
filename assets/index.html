@@ -15,13 +15,13 @@
             
         </div>
         <div class= "options">
-            <div id="0" class="option1"></div>
-            <div id="1" class="option2"></div>
-            <div id="2" class="option3"></div>
-            <div id="3" class="option4"></div>
+            <div id="0" class="option1" onclick="check(this)"></div>
+            <div id="1" class="option2" onclick="check(this)"></div>
+            <div id="2" class="option3" onclick="check(this)"></div>
+            <div id="3" class="option4" onclick="check(this)"></div>
         </div>
         <div class= "button">
-            <button type="button" class="btn">Next</button>
+            <button type="button" class="btn" onclick="next()">Next</button>
         </div>
         <div class= "answer-tracker">
             <div></div>
@@ -29,6 +29,36 @@
     </div>
 
 
+    <div class="quiz-complete">
+        <div class="box">
+            <h1>
+                Good Try!<br>
+                You Got <span class="correct-answers">3</span> out of <span class="total-questions2">5</span> answers correct!<br>
+                That's <span class="percentage">30%</span>
+            </h1>
+            <button type="button" onclick="tryAgain()">Try Again</button>
+        </div>
+    </div>
+
+
+
+
+
+    <div class= "quiz-container"> 
+        <div class= "question-number">
+            <h3>JavaScript quiz </h3>
+        </div>
+        <div class= "question">
+            
+        </div>
+        <div class= "options">
+            <div>This is a JavaScript quiz, it will test you on common knowledge of JS on a timer. Every question will be recorded and you will be given a score at the end. Enter your initials to save your score and try and beat it the next time.</div>
+        </div>
+        <div class= "button">
+            <button type="button" class="btn" onclick="next()">Start</button>
+        </div>
+        
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
