@@ -15,9 +15,20 @@ body{
     background-color: #ffffff;
     border-radius: 10px;
     margin: 40px auto;
+    max-height: 600px;
+    max-width: 700px;
+    padding: 30px;
+    display: none;
+} 
+
+.start-container{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 40px auto;
     max-height: 500px;
     max-width: 700px;
     padding: 30px;
+    display: hidden;
 } 
 
 /*ADDING IN STYLES FOR QUESTION HEADER*/
@@ -34,7 +45,7 @@ body{
     padding: 20px 0;
 }
 /*ADDING IN STYLES FOR ANSWER OPTIONS*/
-.options div{
+.options-quest div{
     background-color: #cccccc;
     font-size: 16px;
     color: 000000;
@@ -46,17 +57,28 @@ body{
     overflow: hidden;
 }
 
-.options div.disabled{
+.options div{
+    background-color: #cccccc;
+    font-size: 16px;
+    color: 000000;
+    margin-bottom: 10px;
+    padding:15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.options-quest div.disabled{
     pointer-events: none;
 }
 
 
 /*ADDED ANIMATION TO CORRECT ANSWERS*/
-.options div.correct{
+.options-quest div.correct{
     color: #fff;
     z-index: 1;
 }
-.options div.correct::before{
+.options-quest div.correct::before{
     content: "";
     position: absolute;
     left:0;
@@ -79,11 +101,11 @@ body{
 
 
 /*ADDED ANIMATION TO INCORRECT ANSWERS*/
-.options div.incorrect{
+.options-quest div.incorrect{
     color: #fff;
     z-index: 1;
 }
-.options div.incorrect::before{
+.options-quest div.incorrect::before{
     content: "";
     position: absolute;
     left:0;
@@ -105,6 +127,18 @@ body{
 }
 /*ADDING IN BUTTON STYLES FOR SHAPE AND SIZE*/
 .button .btn{
+    background-color: #009688;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    margin: 15px 0;
+    padding:15px 50px;
+}
+
+.start .startBtn{
     background-color: #009688;
     border: none;
     border-radius: 5px;

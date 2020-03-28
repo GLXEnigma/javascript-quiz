@@ -7,18 +7,42 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class= "quiz-container"> 
+    <div class= "start-container" id = hidden> 
+        <div class= "question-number">
+            <h3>JavaScript quiz </h3>
+            <br>
+        </div>
+        <div>
+            
+        </div>
+        <div class= "options">
+            <div>This is a JavaScript quiz, it will test you on common knowledge of JS on a timer. Every question will be recorded and you will be given a score at the end. Enter your initials to save your score and try and beat it the next time.</div>
+        </div>
+        <div class= "start">
+            <button type="button" class="startBtn" onclick="start()">Start</button>
+        </div>
+    </div>  
+        
+        
+
+
+
+    <div class= "quiz-container" id ="quiz-hidden"> 
         <div class= "question-number">
             <h3>Question <span class="question-num-value"></span> of <span class="total-questions"></h3>
         </div>
         <div class= "question">
             
         </div>
-        <div class= "options">
+        <div class= "options-quest" >
             <div id="0" class="option1" onclick="check(this)"></div>
             <div id="1" class="option2" onclick="check(this)"></div>
             <div id="2" class="option3" onclick="check(this)"></div>
             <div id="3" class="option4" onclick="check(this)"></div>
+        </div>
+        <div id="time" class="timer">
+            <h4>Timer:  </h4>
+            <h4 id="timer"></h>
         </div>
         <div class= "button">
             <button type="button" class="btn" onclick="next()">Next</button>
@@ -29,7 +53,7 @@
     </div>
 
 
-    <div class="quiz-complete">
+    <div class="quiz-complete" id ="final-page">
         <div class="box">
             <h1>
                 Good Try!<br>
@@ -43,22 +67,10 @@
 
 
 
+    
 
-    <div class= "quiz-container"> 
-        <div class= "question-number">
-            <h3>JavaScript quiz </h3>
-        </div>
-        <div class= "question">
-            
-        </div>
-        <div class= "options">
-            <div>This is a JavaScript quiz, it will test you on common knowledge of JS on a timer. Every question will be recorded and you will be given a score at the end. Enter your initials to save your score and try and beat it the next time.</div>
-        </div>
-        <div class= "button">
-            <button type="button" class="btn" onclick="next()">Start</button>
-        </div>
-        
-    </div>
+
+ 
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,11 +1,14 @@
 
-const options=document.querySelector(".options").children;
+const options=document.querySelector(".options-quest").children;
 const questionNumberSpan=document.querySelector(".question-num-value")
 const totalQuestionSpan=document.querySelector(".total-questions");
 const correctAnswerSpan=document.querySelector(".correct-answers");
 const totalQuestions=document.querySelector(".total-questions2");
 const percentage=document.querySelector(".percentage");
 const question=document.querySelector(".question");
+const hidden = document.getElementById("hidden");
+const quizHidden = document.getElementById("quiz-hidden");
+const scorePage = document.getElementById("final-page")
 const op1=document.querySelector(".option1");
 const op2=document.querySelector(".option2");
 const op3=document.querySelector(".option3");
@@ -135,7 +138,8 @@ function randomQuestion(){
 }
 
 function quizComplete(){
-    document.querySelector(".quiz-complete").classList.add("show");
+    scorePage.style.display = "block"
+    scorePage.style.margine = "auto"
     correctAnswerSpan.innerHTML=score;
     totalQuestions.innerHTML=questions.length;
     percentage.innerHTML=(score/questions.length)*100 + "%";
@@ -151,7 +155,39 @@ window.onload=function(){
 
 
 // this is where i need to add the timer
-function timer(){
+function timeLeft(time) {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    if (seconds < 10) {
+    seconds = `0${seconds}`;
+    }
+    return `${minutes}:${seconds}`;
+   }
+   function timer() {
+    const TIME_LIMIT = 45;
+    var timePassed = 0;
+    var timeLeft = TIME_LIMIT;
+    document.getElementById('timer').textContent = "00:00";
+    setInterval(() => {
+    timePassed = timePassed + 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    if (timeLeft < 0) {
+   
+    timeLeft = 0;
+    }
+    var formattedTimeLeft = timeLeft(timeLeft);
+    document.getElementById('timer').textContent = [formattedTimeLeft];
+    }, 1000)
+   }
 
+function start() {
+  if (hidden.style.display == "auto") {
+  } else {
+    hidden.style.display = "none";
+  }
+  quizHidden.style.display = "block";
+  timer();
 }
+
+
 
